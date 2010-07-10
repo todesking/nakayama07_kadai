@@ -21,6 +21,13 @@ public class SampleTest {
 		assertThat(target.getHello("Sample"), is("Hello Sample"));
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void test_getHello_argumentNull() throws Exception {
+		// 仕様には引数がnullである場合の挙動が記述されていない。
+		// nullを許容しないという解釈で実装する
+		target.getHello(null);
+	}
+
 	@Test
 	public void test_divide() throws Exception {
 		assertThat(target.divide(1, 1), is(1 / 1));
