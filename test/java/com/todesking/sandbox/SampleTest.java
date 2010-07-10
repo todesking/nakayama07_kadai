@@ -17,5 +17,7 @@ public class SampleTest {
 	@Test
 	public void test_getHello() throws Exception {
 		assertThat(target.getHello(""), is("Hello "));
+		assertThat(target.getHello("World"), is("Hello World"));
+		assertThat(target.getHello("Sample"), is("Hello Sample"));
 	}
 }
