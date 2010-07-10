@@ -6,4 +6,8 @@ public class Sample {
 		return "Hello " + str;
 	}
 
+	public int divide(int x, int y) {
+		return x / y;
+	}
+
 }

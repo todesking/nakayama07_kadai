@@ -20,4 +20,15 @@ public class SampleTest {
 		assertThat(target.getHello("World"), is("Hello World"));
 		assertThat(target.getHello("Sample"), is("Hello Sample"));
 	}
+
+	@Test
+	public void test_divide() throws Exception {
+		assertThat(target.divide(1, 1), is(1 / 1));
+		assertThat(target.divide(10, 3), is(10 / 3));
+	}
+
+	@Test(expected = ArithmeticException.class)
+	public void test_divide_by0() throws Exception {
+		target.divide(10, 0);
+	}
 }
